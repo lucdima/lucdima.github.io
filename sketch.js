@@ -1,6 +1,8 @@
 // noprotect;
 var capture;
 var img;
+var mic;
+
 function setup() {
   createCanvas(640, 480 );
   capture = createCapture(VIDEO);

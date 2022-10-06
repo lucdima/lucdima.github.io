@@ -1,4 +1,5 @@
 var sounds = [];
+var img;
 
 function preload() {
   soundFormats('mp3', 'ogg');
@@ -12,17 +13,19 @@ function preload() {
   sounds[7] = loadSound('sounds/frequency.mp3');
   sounds[8] = loadSound('sounds/protect-the-inocents.mp3');
   sounds[9] = loadSound('sounds/roof.mp3');
+
+  img = createImg('https://media.tenor.com/FZugEEtzj3AAAAAi/super-saiyan-goku.gif');
 }
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
   background(220)
   textSize(32);
+  img.hide();
 }
 
 function draw() {
-  background(128);
-
+  // background(128);
 
   if (sounds[0].isPlaying()) {
       background(millis() % 255);
@@ -69,6 +72,8 @@ function draw() {
   if (sounds[8].isPlaying()) {
     textSize(300);
     text('❤️', random(windowWidth),random(windowHeight));
+    img.show();
+    img.position(random(600), random(600));
   }
 
   if (sounds[9].isPlaying()) {
